@@ -1,0 +1,28 @@
+min=70 c=7.5 :Miner=0
+if:Mine==0theni=0 j=0 goto1end
+:Power=1 :MinEPS=min ifi>2theni=0 goto9end
+:Miner=1
+x=c+:MinerX*i :MinerRotation=c-:MinerX
+ifi==0theni=i+1 goto2end
+:MinerRotation=-x+c i=i+1
+goto2
+ifj>2theni=0 j=0 goto2end
+ifj==0then:FcuRotationalPitch=:MinerY j=j+1 goto2end
+ifj==1then:FcuRotationalPitch=-:MinerY*2 j=j+1 goto2end
+ifj==2then:FcuRotationalPitch=:MinerY j=j+1 goto9end
+
+// Simple auto mine for Marmot ship with single mining laser
+// on hardpoint B (right) with small turntable
+// Laser will sweep right to left and ship will pitch up and down
+//
+// Inputs:
+//   :Miner              - :MiningLaserOn field of Mining laser
+//   :MinerRotation      - :TurretRotation field of Small turntable
+//   :FcuRotationalPitch - :FcuRotationalPitch of Main Flight Computer
+//   :Power              - Turn on generators (optional)
+//   :MinEPS             - Minimum generator rate (optional)
+// Options (adjust on line 1):
+//   min - Minimum generator rate to set to adjust according to
+//         ship's power generation
+//   c   - Center of mining laser, default is 7.5 which is for
+//         an asteriod that is about 10-20m away

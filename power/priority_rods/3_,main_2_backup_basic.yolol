@@ -1,0 +1,19 @@
+if:Power==0thengoto8end
+:FuelRod1On=100 :FuelRod2On=100 :FuelRod3On=100
+empty=:FuelRod1==0+:FuelRod2==0+:FuelRod3==0
+ifempty>=1then:FuelRod4On=100end
+ifempty>1then:FuelRod5On=100end
+ifempty==0then:FuelRod4On=0 :FuelRod5On=0end
+goto1
+:FuelRod1On=0 :FuelRod2On=0 :FuelRod3On=0 :FuelRod4On=0 :FuelRod5On=0
+
+// Power toggle that uses 3 main fuel rods which then turns on
+// backup rods (2) as the rods deplete completely
+//
+// Inputs:
+//   :Power      - Power toggle set on button
+//   :FuelRod1On - :FuelChamberUnitRate field of Fuel Chamber 1
+//   :FuelRod2On - :FuelChamberUnitRate field of Fuel Chamber 2
+//   :FuelRod3On - :FuelChamberUnitRate field of Fuel Chamber 3
+//   :FuelRod4On - :FuelChamberUnitRate field of Fuel Chamber 4
+//   :FuelRod5On - :FuelChamberUnitRate field of Fuel Chamber 5

@@ -1,0 +1,7 @@
+:GenRate=:MinEPS+(10000-:Battery)/85 goto1
+
+// Original script of Marmot ship
+// Inputs:
+//   :GenRate - :GeneratorUnitRate field of Generator(s)
+//   :Battery - :StoredBatteryPower field of Batter(ies)
+//   :MinEPS  - Minimum generator rate, set on a button to toggle

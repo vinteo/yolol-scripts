@@ -1,0 +1,22 @@
+if:Approach==1then:Cruise=0 :Turtle=20 :Range=1elsegoto1end
+if:Distance<20thengoto6end if:Distance<100then:FcuForward=2 goto1end
+if:Distance<500then:FcuForward=10 goto1end
+if:Distance<1000then:FcuForward=15 goto1end
+:FcuForward=20 goto1
+:FcuForward=0 :FcuBackward=50 :Cruise=10
+:FcuForward=0 :FcuBackward=0 :Approach=0 :Cruise=10 goto1
+
+// Simple approach with Range Finder to get ship within 20m
+// Use with caution, thrust values may need to be adjusted
+// based on ship
+//
+// Inputs:
+//   :Approach    - Approach toggle set on button
+//   :Range       - :RangeFinderOnState field of Range Finder
+//   :Distance    - :RangeFinderDistance field of Range Finder
+//   :FcuForward  - :FcuForward field on Main flight computer
+//   :FcuBackward - :FcuBackward field on Main flight computer
+//   :Turtle      - :LeverMaxOutput of :FcuForward Lever, used to
+//                  limit forward thrust to 20
+//   :Cruise      - :LeverCenteringSpeed of :FcuForward Lever, used to
+//                  enable cruise control

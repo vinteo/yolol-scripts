@@ -1,0 +1,13 @@
+n="\n" i=0 :Scanner=n if:scr<1then:Scanner+="OFF" goto1end :scn=1
+ifi<:sr then:idx=i :Scanner+=:mat+n+:vol+"kv"+n i+=1 goto2end goto1
+
+// Original script by xenocow
+// Outputs:
+//   :Scanner - Global for text panel
+// Inputs:
+//   :scr - :Active field of Scanner
+//   :scn - :Scan field of Scanner
+//   :sr  - :ScanResults field of Scanner
+//   :idx - :Index field of Scanner
+//   :mat - :Material field of Scanner
+//   :vol - :Volume field of Scanner
