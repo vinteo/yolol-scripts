@@ -1,8 +1,7 @@
 if:Approach==1then:Cruise=0 :Turtle=20 :Range=1elsegoto1end
-if:Distance<20thengoto6end if:Distance<100then:FcuForward=2 goto1end
+if:Distance<20thengoto5end if:Distance<100then:FcuForward=2 goto1end
 if:Distance<500then:FcuForward=10 goto1end
-if:Distance<1000then:FcuForward=15 goto1end
-:FcuForward=20 goto1
+if:Distance<1000then:FcuForward=15 goto1end goto6
 :FcuForward=0 :FcuBackward=50 :Cruise=10
 :FcuForward=0 :FcuBackward=0 :Approach=0 :Cruise=10 goto1
 

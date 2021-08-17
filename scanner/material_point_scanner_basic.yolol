@@ -1,5 +1,6 @@
-n="\n" i=0 :Scanner=n if:scr<1then:Scanner+="OFF" goto1end :scn=1
-ifi<:sr then:idx=i :Scanner+=:mat+n+:vol+"kv"+n i+=1 goto2end goto1
+n="\n" s=1728 k=" stks" o="OFF"
+i=0 if:scr<1then:Scanner=o goto2end :scn=1 :Scanner=n //:Mining=1
+ifi<:sr then:idx=i a=:vol/s :Scanner+=:mat+n+a+k+n i+=1 goto3end goto2
 
 // Original script by xenocow
 // Outputs:
