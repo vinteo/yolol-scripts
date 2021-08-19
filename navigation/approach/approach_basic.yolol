@@ -1,0 +1,28 @@
+t=15 m=3 Mr=0.1 Md=0.5 lr=0
+if:Approach==1then:Range=1 :Cruise=0 :Turtle=10 goto3elsegoto1end
+d=:Distance r=d-t dr=r-lr s=Mr*r+Md*dr lr=r
+ifd>999 or r<m then:Approach=0 goto7end
+ifs>0then:FCUForward=s else:FCUForward=0end
+ifs<0then:FCUBackward=-s else:FCUBackward=0end
+if:Approach==1thengoto3end :FCUForward=0 :FCUBackward=0 :Cruise=10
+goto1
+
+// Original script from:
+// https://www.reddit.com/r/starbase/comments/p63wyw/autoapproach_asteroids_in_your_buffalo/
+// Adjust multipliers in options depending on ship thrust capability
+//
+// Inputs:
+//   :Approach    - Approach toggle set on button
+//   :Range       - :RangeFinderOnState field of Range Finder
+//   :Distance    - :RangeFinderDistance field of Range Finder
+//   :FcuForward  - :FcuForward field on Main flight computer
+//   :FcuBackward - :FcuBackward field on Main flight computer
+//   :Turtle      - :LeverMaxOutput of :FcuForward Lever, used to
+//                  limit forward thrust to 20
+//   :Cruise      - :LeverCenteringSpeed of :FcuForward Lever, used to
+//                  enable cruise control
+// Options (adjust on line 1):
+//   t  - Target distance to object
+//   m  - Distance from target to stop approach (safety margin)
+//   Mr - Multiplier for speed based on distance remaining
+//   Md - Multiplier for speed based on distance travelled in last cycle
